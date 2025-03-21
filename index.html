@@ -70,6 +70,13 @@
             transform: rotate(45deg);
             transform-origin: 100% 100%;
         }
+                
+        /* Remove black semi-transparent ribbon on mobile */
+        @media (max-width: 767px) {
+            .cover.black {
+                display: none;
+            }
+        }
     </style>
 </head>
 
