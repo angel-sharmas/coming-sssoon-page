@@ -13,15 +13,15 @@
     <link href='http://fonts.googleapis.com/css?family=Grand+Hotel' rel='stylesheet' type='text/css'>
 
     <style>
-        /* General styles */
+        /* Responsive styles */
         body {
             margin: 0;
             padding: 0;
-            font-family: Arial, sans-serif;
         }
         .header-image {
             width: 100%;
             height: auto;
+            max-width: 100%;
             display: block;
         }
         .container {
@@ -44,35 +44,62 @@
                 max-width: 1170px;
             }
         }
-
-        /* Email button styles */
-        .email-button {
-            position: fixed;
-            top: 10px;
-            right: 10px;
-            background-color: transparent;
-            border: none;
-            font-size: 18px;
-            color: #fff;
-            cursor: pointer;
-            z-index: 100; /* Ensure it stays above other elements */
+        /* Heart icon styles */
+        #heart {
+            position: relative;
+            width: 100px;
+            height: 90px;
+            margin-top: 10px;
         }
-        .email-button i {
-            margin-right: 5px;
+        #heart::before, #heart::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            width: 52px;
+            height: 80px;
+            border-radius: 50px 50px 0 0;
+            background: red;
         }
-
-        /* Fix for black ribbon issue */
-        .cover.black {
-            background-color: transparent !important; /* Remove black overlay */
+        #heart::before {
+            left: 50px;
+            transform: rotate(-45deg);
+            transform-origin: 0 100%;
         }
+        #heart::after {
+            left: 0;
+            transform: rotate(45deg);
+            transform-origin: 100% 100%;
+        }
+        
     </style>
 </head>
 
 <body>
-    <!-- Email Button -->
-    <button class="email-button" onclick="window.location.href='mailto:saurav@oaeroo.com';">
-        <i class="fa fa-envelope-o"></i>Email
-    </button>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-transparent navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                  <!--  <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>-->
+                </button>
+            </div>
+
+            <div class="navbar-transparent>
+                <!--<ul class="nav navbar-nav navbar-right">-->
+                  <ul class="nav"></ul>
+                    <li>
+                        <a href="mailto:saurav@oaeroo.com">
+                            <i class="fa fa-envelope-o"></i>
+                            Email
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
     <!-- Header Image -->
     <header>
@@ -81,24 +108,23 @@
 
     <!-- Main Content -->
     <div class="main" style="background-image: url('images/default.jpg')">
-        <!-- Removed black ribbon overlay -->
-        <div class="cover black"></div>
-        
-        <div class="container">
-            <img src="images/transparent-bg.png" alt="Dynamic Image" style="max-width: 100%; height: auto;">
-            
+        <div class="cover black" data-color="red"></div>
+        <div class="container"><img src="images/transparent-bg.png" alt="Dynamic Image" style="max-width: 100%; height: auto;">
             <h1 class="logo cursive">Annapurna Aerofarms</h1>
-            
             <div class="content">
                 <h4 class="motto">AI-powered high-density farming for premium high value spices.</h4>
-                
                 <div class="subscribe">
+                    
                     <div class="row">
                         <div class="col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1">
+                            
                             <h5 class="info-text">Join the waiting list for updates. We will keep you posted.</h5>
                             <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeFqZNN8WbDxG3VAwv2McUEgNp-ahfGurJBqV0iitvJrjTe5A/viewform?embedded=true" width="100%" height="3047" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
                         </div>
+                    
+                    
                     </div>
+                    
                 </div>
             </div>
         </div>
